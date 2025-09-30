@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Base legibility --- */
+:root {
+  --container: 72rem; /* 1152px */
+}
+* { -webkit-tap-highlight-color: transparent; }
+html, body { height: 100%; }
+body { line-height: 1.5; }
+::selection { background: rgba(5,150,105,.25); }
+
+/* Optional: a reusable container class */
+.container {
+  @apply mx-auto max-w-[var(--container)] px-4 md:px-6;
+}
+
+/* Links */
+a { @apply hover:opacity-90; }
+
+/* Card text contrasts */
+.card { @apply bg-white border rounded-2xl; }
+.card-muted { @apply text-slate-600; }
+
+/* Fix dark hero readability if you swap images later */
+.hero-dark h1, .hero-dark p, .hero-dark a { @apply text-white; }

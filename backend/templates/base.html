@@ -1,0 +1,17 @@
+{% load static %}
+<!doctype html>
+<html lang="mk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{% block title %}{{ brand|default:"ВашБренд" }}{% endblock %}</title>
+    <!-- Tailwind CDN for quick design parity; replace with built CSS later -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'site.css' %}">
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    {% include "includes/navbar.html" %}
+    {% block content %}{% endblock %}
+    {% include "includes/footer.html" %}
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Нарачка примена · {{ brand|default:"ВашБренд" }}{% endblock %}
+{% block content %}
+  <main class="mx-auto max-w-3xl px-4 md:px-6 py-12">
+    <h1 class="text-2xl font-bold mb-2">✅ Нарачката е примена</h1>
+    <p class="text-gray-700">Ви благодариме, {{ order.customer_name }}. Наш агент ќе ве контактира наскоро.</p>
+    <p class="mt-2 text-sm text-gray-600"><strong>ID:</strong> {{ order.id }}</p>
+    <a href="/" class="inline-block mt-6 underline">← Назад кон почетна</a>
+  </main>
+{% endblock %}

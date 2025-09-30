@@ -1,0 +1,15 @@
+<section id="products" class="bg-gray-50">
+  <div class="mx-auto max-w-7xl px-4 md:px-6 py-12">
+    <div class="flex items-end justify-between gap-4">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Наши производи</h2>
+      <a href="/checkout/" class="text-sm underline">Поголема количина?</a>
+    </div>
+    <ul class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {% for p in products %}
+        {% include "includes/product_card.html" %}
+      {% empty %}
+        <li class="text-gray-500">Нема објавени производи.</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
