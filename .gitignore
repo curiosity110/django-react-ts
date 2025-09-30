@@ -1,0 +1,69 @@
+# ----- OS / Editors -----
+.DS_Store
+Thumbs.db
+*.sw?
+.idea/
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# ----- Python / Django -----
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.pyright/
+.coverage*
+htmlcov/
+
+# Virtual envs
+venv/
+env/
+.venv/
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# Django runtime artifacts
+backend/db.sqlite3
+backend/db.sqlite3-journal
+backend/staticfiles/
+backend/media/
+backend/*.log
+# If you keep local-only settings
+backend/core/local_settings.py
+
+# ----- Node / Next.js (frontend) -----
+frontend/node_modules/
+frontend/.next/
+frontend/.turbo/
+frontend/out/
+frontend/.vercel/
+frontend/.env*
+!frontend/.env.local.example
+
+# Keep lockfiles committed:
+# !frontend/package-lock.json
+# !frontend/pnpm-lock.yaml
+# !frontend/yarn.lock
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ----- Misc -----
+# If you experiment with Docker builds, cache, etc.
+*.pid
