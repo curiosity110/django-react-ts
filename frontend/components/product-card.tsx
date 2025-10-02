@@ -19,19 +19,24 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <article className={styles.card}>
-      <div className={styles.heading}>
-        <h2>{product.title}</h2>
+      <div className={styles.ribbon}>Limited</div>
+      <header className={styles.header}>
+        <h3>{product.title}</h3>
         <p className={styles.price}>{formatCurrency(product.price_cents)}</p>
-      </div>
+      </header>
       {product.description ? (
         <p className={styles.description}>{product.description}</p>
-      ) : null}
+      ) : (
+        <p className={styles.description}>
+          Delicate, versatile and made to shine on repeat. Crafted in micro batches for the Limited Charm collection.
+        </p>
+      )}
       <div className={styles.actions}>
-        <Link href={`/products/${product.slug}`} className={styles.link}>
+        <Link href={`/products/${product.slug}`} className={styles.secondaryAction}>
           View details
         </Link>
-        <button type="button" className={styles.button} onClick={handleAdd}>
-          {added ? "Added" : "Add to cart"}
+        <button type="button" className={styles.primaryAction} onClick={handleAdd}>
+          {added ? "Added" : "Add to bag"}
         </button>
       </div>
     </article>

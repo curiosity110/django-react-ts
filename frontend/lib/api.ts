@@ -2,16 +2,37 @@ import type { ApiItemResponse, ApiListResponse, Product } from "@/lib/types";
 
 const DEFAULT_API_URL = "http://localhost:8000";
 
+function getBaseUrl() {
+  const configured = process.env.NEXT_PUBLIC_API_URL?.trim() || process.env.API_URL?.trim();
+  if (configured) {
+    return configured;
+  }
+
+  if (typeof window !== "undefined" && window.location?.origin) {
+    return window.location.origin;
+  }
+
+  return DEFAULT_API_URL;
+}
+
 function buildUrl(path: string) {
-  const base = process.env.NEXT_PUBLIC_API_URL || DEFAULT_API_URL;
-  return `${base.replace(/\/$/, "")}${path}`;
+  const base = getBaseUrl();
+
+  try {
+    return new URL(path, base).toString();
+  } catch (error) {
+    console.warn("Failed to build API URL", { base, path, error });
+    const sanitizedBase = (base || DEFAULT_API_URL).replace(/\/$/, "");
+    return `${sanitizedBase}${path}`;
+  }
 }
 
 async function fetchJson<T>(path: string): Promise<ApiItemResponse<T>> {
   try {
     const res = await fetch(buildUrl(path), {
       headers: { "Content-Type": "application/json" },
-      next: { revalidate: 30 }
+      next: { revalidate: 30 },
+      cache: "no-store"
     });
 
     if (!res.ok) {

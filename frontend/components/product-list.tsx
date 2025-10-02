@@ -21,8 +21,8 @@ export async function ProductList() {
       <style jsx>{`
         .product-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-          gap: 1.5rem;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 2rem;
         }
       `}</style>
     </div>
