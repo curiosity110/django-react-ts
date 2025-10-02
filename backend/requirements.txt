@@ -2,6 +2,7 @@ Django>=5.0
 djangorestframework
 djangorestframework-simplejwt
 django-cors-headers
+jazzmin
 psycopg[binary]
 gunicorn
 whitenoise
