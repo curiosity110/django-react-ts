@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import importlib
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -8,11 +9,17 @@ DEBUG = os.getenv("DEBUG", "True") == "True"
 ALLOWED_HOSTS = ["127.0.0.1", "localhost"]  # add your domain on deploy
 
 INSTALLED_APPS = [
-    "django.contrib.admin","django.contrib.auth","django.contrib.contenttypes",
-    "django.contrib.sessions","django.contrib.messages","django.contrib.staticfiles",
-    "jazzmin",  
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
     "catalog",  # our shop app
 ]
+
+if importlib.util.find_spec("jazzmin"):
+    INSTALLED_APPS.insert(0, "jazzmin")
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
