@@ -5,8 +5,9 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Storefront",
-  description: "Simple storefront powered by Django and Next.js"
+  title: "Limited Charm Boutique",
+  description:
+    "Limited edition jewelry boutique crafted in Skopje. Discover radiant earrings, rings and necklaces made to shine on repeat."
 };
 
 export default function RootLayout({

@@ -1,31 +1,73 @@
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  padding: 1.1rem 5vw;
+  gap: 1.5rem;
 }
 
 .brand {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #111827;
 }
 
 .nav {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 1.25rem;
 }
 
 .navLink {
-  font-weight: 500;
-  color: #2563eb;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #4c1d95;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .navLink:hover,
 .navLink:focus-visible {
-  text-decoration: underline;
+  background: rgba(124, 58, 237, 0.12);
+  color: #312e81;
+}
+
+.cartButton {
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+  background: linear-gradient(120deg, #6366f1, #ec4899);
+  color: #ffffff;
+  box-shadow: 0 18px 32px -20px rgba(236, 72, 153, 0.6);
+}
+
+.cartButton:hover,
+.cartButton:focus-visible {
+  box-shadow: 0 22px 40px -20px rgba(236, 72, 153, 0.7);
+}
+
+@media (max-width: 840px) {
+  .inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem 1.25rem;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }

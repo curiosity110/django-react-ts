@@ -10,17 +10,28 @@ export function Header() {
 
   return (
     <header className={styles.header}>
-      <Link href="/" className={styles.brand}>
-        Fresh Store
-      </Link>
-      <nav className={styles.nav} aria-label="Main navigation">
-        <Link href="/" className={styles.navLink}>
-          Products
+      <div className={styles.inner}>
+        <Link href="/" className={styles.brand}>
+          Limited Charm
         </Link>
-        <Link href="/cart" className={styles.navLink}>
+        <nav className={styles.nav} aria-label="Main navigation">
+          <Link href="/" className={styles.navLink}>
+            Home
+          </Link>
+          <Link href="/#products" className={styles.navLink}>
+            Collection
+          </Link>
+          <Link href="/#story" className={styles.navLink}>
+            Story
+          </Link>
+          <Link href="/#contact" className={styles.navLink}>
+            Contact
+          </Link>
+        </nav>
+        <Link href="/cart" className={styles.cartButton}>
           Cart {itemCount > 0 ? `(${itemCount})` : ""}
         </Link>
-      </nav>
+      </div>
     </header>
   );
 }
